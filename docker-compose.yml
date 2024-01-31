@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  dart_db:
+    image: postgres:14.1
+    container_name: dart_db
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: dart-datastore_dev
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: adart_password
+    volumes:
+          - /home/asudarsanan/projects/DART/pg_data_dev:/var/lib/postgresql/data
